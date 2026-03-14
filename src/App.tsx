@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, Scissors, User, Instagram, Facebook, MessageCircle, Star, CheckCircle2, Quote, Award, Sparkles, Zap, Check } from 'lucide-react';
+import { MapPin, Phone, Clock, Instagram, MessageCircle, Star, CheckCircle2, Quote, Award, Sparkles, Zap, Check } from 'lucide-react';
 import './App.css';
 import heroMain from './assets/hero-main.webp';
 import gallery1 from './assets/gallery-1.webp';
@@ -212,7 +212,7 @@ function App() {
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
-              allowFullScreen="" 
+              allowFullScreen={true} 
               loading="lazy"
             ></iframe>
           </div>

@@ -75,8 +75,15 @@ body { background-color: var(--dark); color: var(--white); font-family: 'Inter',
 .nav-cta { background: var(--gold); color: #000; padding: 10px 22px; text-decoration: none; font-weight: 800; border-radius: 50px; font-size: 0.8rem; text-transform: uppercase; animation: buttonGlow 3s infinite; }
 
 /* Hero Section */
-.hero-split { display: flex; min-height: 100vh; padding-top: 20px; }
-.hero-text-side { flex: 1; padding: 20px 80px 0; display: flex; flex-direction: column; justify-content: center; animation: fadeInUp 1s ease-out; }
+.hero-split { display: flex; min-height: 100vh; padding-top: 0; }
+.hero-text-side { 
+  flex: 1; 
+  padding: 100px 80px 0; /* Espacio justo para la barra de navegación */
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-start; /* Alineado arriba */
+  animation: fadeInUp 1s ease-out; 
+}
 .logo-brand-container-large { max-width: 400px; margin-bottom: 25px; margin-top: 0; }
 .logo-real-img { width: 100%; height: auto; mix-blend-mode: screen; filter: contrast(1.8) brightness(1.1); transform: rotate(-1.8deg); }
 .neon-effect { animation: neonFlicker 6s infinite; }

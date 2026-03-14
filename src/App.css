@@ -12,6 +12,22 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes neonFlicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 0.99;
+    filter: contrast(1.4) brightness(1.1) drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+    filter: contrast(1) brightness(0.8) drop-shadow(0 0 5px rgba(212, 175, 55, 0.1));
+  }
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
 * { transition: all 0.3s ease; box-sizing: border-box; }
 
 body {
@@ -49,13 +65,17 @@ body {
 .hero-text-side { flex: 1; padding: 0 60px; display: flex; flex-direction: column; justify-content: center; }
 .logo-brand-container-large { max-width: 350px; margin-bottom: 20px; }
 
-/* Fusión del logo sin recuadro negro */
 .logo-real-img { 
   width: 100%; 
   height: auto; 
   mix-blend-mode: screen; 
   filter: contrast(1.4) brightness(1.1); 
   transform: rotate(-1.8deg); 
+}
+
+/* Efecto de prendido y apagado restaurado */
+.neon-effect {
+  animation: neonFlicker 6s infinite;
 }
 
 .hero-title-main { 
@@ -86,7 +106,17 @@ body {
 .price-pill { background: #222; padding: 5px 15px; border-radius: 50px; font-weight: bold; }
 .price-pill.gold { background: var(--gold); color: #000; }
 
-/* Gallery Carousel - Fotos iguales y deslizables */
+/* Horario Section */
+.schedule-section { padding: 80px 0; display: flex; justify-content: center; }
+.schedule-card { background: var(--dark-card); border: 1px solid #222; border-radius: 30px; padding: 40px; width: 100%; max-width: 600px; text-align: center; }
+.schedule-header { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 30px; }
+.schedule-header .title-luxe { margin-bottom: 0; font-size: 2rem; }
+.schedule-grid { display: flex; flex-direction: column; gap: 15px; }
+.day-row { display: flex; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid #222; font-size: 1.1rem; }
+.day-row.closed { color: #666; }
+.status-open-now { color: #25D366; font-weight: bold; margin-top: 25px; text-transform: uppercase; font-size: 0.9rem; }
+
+/* Gallery Carousel */
 .gallery-carousel-section { padding: 60px 0; background: #050505; }
 .carousel-container { position: relative; margin-top: 30px; }
 .carousel-track {
@@ -95,34 +125,23 @@ body {
   scrollbar-width: none;
 }
 .carousel-track::-webkit-scrollbar { display: none; }
-
 .carousel-item {
-  min-width: 85%; 
-  scroll-snap-align: center;
-  height: 450px; 
-  border-radius: 20px; 
-  overflow: hidden;
-  border: 1px solid #222;
-  flex-shrink: 0;
+  min-width: 85%; scroll-snap-align: center;
+  height: 450px; border-radius: 20px; overflow: hidden;
+  border: 1px solid #222; flex-shrink: 0;
 }
-
-.carousel-item img { 
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
-}
-
+.carousel-item img { width: 100%; height: 100%; object-fit: cover; }
 .carousel-hint { text-align: center; font-size: 0.8rem; color: var(--gold); margin-top: 15px; display: flex; align-items: center; justify-content: center; gap: 10px; }
 
 /* Reviews */
 .reviews-section { padding: 60px 0; }
 .reviews-grid { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; scrollbar-width: none; }
-.review-circle-card { min-width: 280px; background: var(--dark-card); padding: 30px; border-radius: 20px; border: 1px solid #222; text-align: center; }
+.review-circle-card { min-width: 280px; background: var(--dark-card); padding: 30px; border-radius: 20px; border: 1px solid #222; text-align: center; animation: floating 5s infinite ease-in-out; }
 .reviewer-name { display: block; margin-top: 15px; color: var(--gold); font-weight: bold; font-size: 0.8rem; }
 
 /* Contact */
 .contact-luxe { padding: 60px 0; }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; }
 .info-block { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
 .gold-icon { color: var(--gold); }
 .social-mini { display: flex; gap: 20px; margin-top: 20px; color: var(--gold); }
@@ -137,23 +156,14 @@ body {
   .hero-text-side { padding: 30px 20px; text-align: center; align-items: center; order: 2; }
   .hero-image-side-v2 { height: 40vh; order: 1; flex: none; }
   .overlay-gradient-v2 { background: linear-gradient(to top, #0a0a0a, transparent 50%); }
-  
-  .hero-title-main { 
-    font-size: 2rem; 
-    padding: 0 10px;
-  }
-  
+  .hero-title-main { font-size: 2rem; padding: 0 10px; }
   .hero-desc-large { font-size: 1rem; }
   .hero-actions-large { flex-direction: column; width: 100%; }
   .btn-primary-pill-large, .btn-secondary-outline { width: 100%; text-align: center; }
   .services-menu-grid, .contact-grid { grid-template-columns: 1fr; }
-  
-  .carousel-item { 
-    min-width: 90%; 
-    height: 380px; 
-  }
-  
+  .carousel-item { min-width: 90%; height: 380px; }
   .title-luxe { font-size: 2rem; }
+  .schedule-card { padding: 30px 20px; }
 }
 
 @media (max-width: 480px) {

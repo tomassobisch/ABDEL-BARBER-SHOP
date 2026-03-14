@@ -1,4 +1,4 @@
-import { MapPin, Phone, Instagram, MessageCircle, Star, Quote, Check, ChevronRight, ChevronLeft } from 'lucide-react';
+import { MapPin, Phone, Clock, Instagram, MessageCircle, Star, Quote, Check, ChevronRight, ChevronLeft } from 'lucide-react';
 import './App.css';
 import heroMain from './assets/hero-main.webp';
 import gallery1 from './assets/gallery-1.webp';
@@ -41,8 +41,8 @@ function App() {
           <div className="nav-links">
             <a href="#servicios">Servicios</a>
             <a href="#galeria">Galería</a>
+            <a href="#horario">Horario</a>
             <a href="#reseñas">Reseñas</a>
-            <a href="#contacto">Ubicación</a>
           </div>
           <a href={`https://wa.me/${whatsappNumber}`} className="nav-cta">Reservar</a>
         </div>
@@ -52,7 +52,7 @@ function App() {
       <section className="hero-split">
         <div className="hero-text-side">
           <div className="logo-brand-container-large">
-            <img src={logoReal} alt="Abdel Barbershop Logo" className="logo-real-img" />
+            <img src={logoReal} alt="Abdel Barbershop Logo" className="logo-real-img neon-effect" />
           </div>
           <h2 className="hero-title-main">Especialistas en Degradados</h2>
           <p className="hero-desc-large">Barbería premium en Sant Adrià de Besòs.</p>
@@ -96,7 +96,23 @@ function App() {
         </div>
       </section>
 
-      {/* Gallery Carousel - NUEVO */}
+      {/* Horario Section - NUEVO */}
+      <section id="horario" className="schedule-section container">
+        <div className="schedule-card">
+          <div className="schedule-header">
+            <Clock size={32} color="#d4af37" />
+            <h3 className="title-luxe">Horario de Apertura</h3>
+          </div>
+          <div className="schedule-grid">
+            <div className="day-row"><span>Lunes - Viernes</span> <strong>09:30 — 21:00</strong></div>
+            <div className="day-row"><span>Sábados</span> <strong>09:30 — 21:00</strong></div>
+            <div className="day-row closed"><span>Domingos</span> <strong>Cerrado</strong></div>
+          </div>
+          <p className="status-open-now">Abre hoy a las 09:30</p>
+        </div>
+      </section>
+
+      {/* Gallery Carousel */}
       <section id="galeria" className="gallery-carousel-section">
         <div className="container">
           <h3 className="title-luxe text-center">Nuestro Arte</h3>
@@ -134,7 +150,7 @@ function App() {
             <h3 className="title-luxe">Visítanos</h3>
             <div className="info-block">
               <MapPin className="gold-icon" />
-              <p>Carrer de Josep Royo, 21</p>
+              <p>Carrer de Josep Royo, 21, Sant Adrià de Besòs</p>
             </div>
             <div className="info-block">
               <Phone className="gold-icon" />

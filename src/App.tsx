@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, Instagram, MessageCircle, Star, Quote, Check, ChevronRight, ChevronLeft } from 'lucide-react';
+import { MapPin, Phone, Clock, Instagram, MessageCircle, Star, Quote, Check, ChevronRight, ChevronLeft, Send, PhoneCall } from 'lucide-react';
 import './App.css';
 import heroMain from './assets/hero-main.webp';
 import gallery1 from './assets/gallery-1.webp';
@@ -43,6 +43,7 @@ function App() {
             <a href="#galeria">Galería</a>
             <a href="#horario">Horario</a>
             <a href="#reseñas">Reseñas</a>
+            <a href="#contacto">Ubicación</a>
           </div>
           <a href={`https://wa.me/${whatsappNumber}`} className="nav-cta">Reservar</a>
         </div>
@@ -96,7 +97,7 @@ function App() {
         </div>
       </section>
 
-      {/* Horario Section - NUEVO */}
+      {/* Horario Section */}
       <section id="horario" className="schedule-section container">
         <div className="schedule-card">
           <div className="schedule-header">
@@ -143,39 +144,66 @@ function App() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contacto" className="contact-luxe">
-        <div className="container contact-grid">
-          <div className="contact-info">
-            <h3 className="title-luxe">Visítanos</h3>
-            <div className="info-block">
-              <MapPin className="gold-icon" />
-              <p>Carrer de Josep Royo, 21, Sant Adrià de Besòs</p>
-            </div>
-            <div className="info-block">
-              <Phone className="gold-icon" />
-              <p>+34 640 83 23 67</p>
-            </div>
-            <div className="social-mini">
-              <a href="https://www.instagram.com/barberabdel/"><Instagram size={24} /></a>
-              <a href={`https://wa.me/${whatsappNumber}`}><MessageCircle size={24} /></a>
-            </div>
+      {/* Contact Section - REDISEÑADA */}
+      <section id="contacto" className="contact-luxe-v2">
+        <div className="container">
+          <div className="contact-header text-center">
+            <span className="tagline">Encuéntranos</span>
+            <h2 className="title-luxe">Ubicación y Contacto</h2>
           </div>
-          <div className="contact-map">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.667232323232!2d2.2173489!3d41.4318553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4bb6d7a7a7a7a%3A0x7a7a7a7a7a7a7a7a!2sABDEL+BARBERSHOP!5e0!3m2!1ses!2ses!4v1710345678901!5m2!1ses!2ses" 
-              width="100%" 
-              height="300" 
-              style={{ border: 0, borderRadius: '20px' }} 
-              allowFullScreen={true} 
-              loading="lazy"
-            ></iframe>
+          
+          <div className="contact-grid-v2">
+            <div className="contact-cards">
+              <div className="contact-card-item">
+                <div className="card-icon"><MapPin size={24} /></div>
+                <div className="card-content">
+                  <span className="card-label">Dirección</span>
+                  <p>Carrer de Josep Royo, 21</p>
+                  <p>08930 Sant Adrià de Besòs, Barcelona</p>
+                  <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className="link-action">Cómo llegar <ChevronRight size={14} /></a>
+                </div>
+              </div>
+
+              <div className="contact-card-item">
+                <div className="card-icon"><PhoneCall size={24} /></div>
+                <div className="card-content">
+                  <span className="card-label">Teléfono</span>
+                  <p>+34 640 83 23 67</p>
+                  <a href="tel:+34640832367" className="link-action">Llamar ahora <ChevronRight size={14} /></a>
+                </div>
+              </div>
+
+              <div className="contact-card-item">
+                <div className="card-icon"><Instagram size={24} /></div>
+                <div className="card-content">
+                  <span className="card-label">Redes Sociales</span>
+                  <p>Sigue nuestros trabajos diarios</p>
+                  <div className="social-links-v2">
+                    <a href="https://www.instagram.com/barberabdel/" target="_blank" rel="noopener noreferrer" className="btn-social">@barberabdel</a>
+                    <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="btn-social">WhatsApp</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="contact-map-v2">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.667232323232!2d2.2173489!3d41.4318553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4bb6d7a7a7a7a%3A0x7a7a7a7a7a7a7a7a!2sABDEL+BARBERSHOP!5e0!3m2!1ses!2ses!4v1710345678901!5m2!1ses!2ses" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
 
-      <footer className="footer-luxe text-center">
-        <p>© 2024 ABDEL BARBER SHOP</p>
+      <footer className="footer-luxe">
+        <div className="container">
+          <p>© 2024 ABDEL BARBER SHOP — Estilo y Tradición en Barcelona.</p>
+        </div>
       </footer>
     </div>
   );

@@ -48,8 +48,25 @@ body {
 .hero-split { display: flex; min-height: 90vh; padding-top: 70px; }
 .hero-text-side { flex: 1; padding: 0 60px; display: flex; flex-direction: column; justify-content: center; }
 .logo-brand-container-large { max-width: 350px; margin-bottom: 20px; }
-.logo-real-img { width: 100%; height: auto; mix-blend-mode: screen; filter: contrast(1.2) brightness(1.1); transform: rotate(-1.8deg); }
-.hero-title-main { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 15px; line-height: 1.1; }
+
+/* Fusión del logo sin recuadro negro */
+.logo-real-img { 
+  width: 100%; 
+  height: auto; 
+  mix-blend-mode: screen; 
+  filter: contrast(1.4) brightness(1.1); 
+  transform: rotate(-1.8deg); 
+}
+
+.hero-title-main { 
+  font-family: 'Playfair Display', serif; 
+  font-size: 3rem; 
+  margin-bottom: 15px; 
+  line-height: 1.1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
 .hero-desc-large { font-size: 1.1rem; color: var(--gray); margin-bottom: 25px; }
 .hero-services-list { margin-bottom: 30px; display: flex; flex-direction: column; gap: 10px; }
 .s-item { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
@@ -69,21 +86,32 @@ body {
 .price-pill { background: #222; padding: 5px 15px; border-radius: 50px; font-weight: bold; }
 .price-pill.gold { background: var(--gold); color: #000; }
 
-/* Gallery Carousel */
+/* Gallery Carousel - Fotos iguales y deslizables */
 .gallery-carousel-section { padding: 60px 0; background: #050505; }
 .carousel-container { position: relative; margin-top: 30px; }
 .carousel-track {
   display: flex; gap: 20px; overflow-x: auto;
   scroll-snap-type: x mandatory; padding-bottom: 20px;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 .carousel-track::-webkit-scrollbar { display: none; }
+
 .carousel-item {
-  min-width: 80%; scroll-snap-align: center;
-  height: 500px; border-radius: 20px; overflow: hidden;
+  min-width: 85%; 
+  scroll-snap-align: center;
+  height: 450px; 
+  border-radius: 20px; 
+  overflow: hidden;
   border: 1px solid #222;
+  flex-shrink: 0;
 }
-.carousel-item img { width: 100%; height: 100%; object-fit: cover; }
+
+.carousel-item img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
 .carousel-hint { text-align: center; font-size: 0.8rem; color: var(--gold); margin-top: 15px; display: flex; align-items: center; justify-content: center; gap: 10px; }
 
 /* Reviews */
@@ -109,11 +137,26 @@ body {
   .hero-text-side { padding: 30px 20px; text-align: center; align-items: center; order: 2; }
   .hero-image-side-v2 { height: 40vh; order: 1; flex: none; }
   .overlay-gradient-v2 { background: linear-gradient(to top, #0a0a0a, transparent 50%); }
-  .hero-title-main { font-size: 2.2rem; }
+  
+  .hero-title-main { 
+    font-size: 2rem; 
+    padding: 0 10px;
+  }
+  
   .hero-desc-large { font-size: 1rem; }
   .hero-actions-large { flex-direction: column; width: 100%; }
   .btn-primary-pill-large, .btn-secondary-outline { width: 100%; text-align: center; }
   .services-menu-grid, .contact-grid { grid-template-columns: 1fr; }
-  .carousel-item { min-width: 90%; height: 400px; }
+  
+  .carousel-item { 
+    min-width: 90%; 
+    height: 380px; 
+  }
+  
   .title-luxe { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+  .hero-title-main { font-size: 1.7rem; }
+  .carousel-item { height: 320px; }
 }

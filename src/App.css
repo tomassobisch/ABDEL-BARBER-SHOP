@@ -69,14 +69,18 @@ body {
 
 .hero-text-side { 
   flex: 1; 
-  padding: 0 80px; 
+  padding: 80px 80px 0; /* Subimos el contenido reduciendo el espacio superior */
   display: flex; 
   flex-direction: column; 
-  justify-content: center;
+  justify-content: flex-start; /* Alineado arriba */
   background-color: var(--dark);
 }
 
-.logo-brand-container-large { max-width: 380px; margin-bottom: 20px; }
+.logo-brand-container-large { 
+  max-width: 380px; 
+  margin-bottom: 25px; 
+  margin-top: 20px; /* Margen controlado para que no pegue a la nav */
+}
 .logo-real-img { width: 100%; height: auto; mix-blend-mode: screen; filter: contrast(1.6) brightness(1.1); transform: rotate(-1.8deg); }
 .neon-effect { animation: neonFlicker 6s infinite; }
 

@@ -1,84 +1,21 @@
 :root {
   --gold: #d4af37;
   --gold-glow: rgba(212, 175, 55, 0.3);
-  --dark: #0a0a0a;
-  --dark-card: #151515;
+  --dark: #000000; /* NEGRO ABSOLUTO: para fundir cualquier imagen */
+  --dark-card: #0a0a0a; /* Un poco más claro para las tarjetas */
   --white: #ffffff;
   --gray: #999999;
 }
 
-/* Animations */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ... resto de animaciones ... */
+
+.logo-real-img { 
+  width: 100%; 
+  height: auto; 
+  mix-blend-mode: screen; 
+  filter: contrast(1.8) brightness(1.1); /* Contraste máximo para eliminar ruido de fondo */
+  transform: rotate(-1.8deg); 
 }
-
-@keyframes neonFlicker {
-  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% { opacity: 0.99; filter: contrast(1.6) brightness(1.1); }
-  20%, 21.999%, 63%, 63.999%, 65%, 69.999% { opacity: 0.4; filter: contrast(1.3) brightness(0.8); }
-}
-
-@keyframes floating {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes buttonGlow {
-  0%, 100% { box-shadow: 0 0 10px var(--gold-glow); }
-  50% { box-shadow: 0 0 25px var(--gold-glow); }
-}
-
-/* Global Reset & Polish */
-* { 
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
-  box-sizing: border-box; 
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  background-color: var(--dark);
-  color: var(--white);
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  overflow-x: hidden;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--dark); }
-::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: var(--gold); }
-
-.container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
-
-/* Nav */
-.main-nav {
-  position: fixed;
-  top: 0; width: 100%; z-index: 1000;
-  background: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(15px);
-  padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-.nav-content { display: flex; justify-content: space-between; align-items: center; }
-.nav-left { display: flex; align-items: center; gap: 25px; }
-.nav-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; color: var(--gold); display: flex; flex-direction: column; align-items: center; line-height: 1; letter-spacing: 2px; }
-.nav-logo-sub { font-size: 0.45rem; letter-spacing: 3px; color: #fff; margin-top: 2px; }
-.nav-maps-info { display: flex; align-items: center; gap: 15px; border-left: 1px solid #333; padding-left: 20px; }
-.nav-rating { color: var(--gold); font-size: 0.85rem; font-weight: bold; display: flex; align-items: center; gap: 5px; }
-.nav-location-link { color: var(--gray); text-decoration: none; font-size: 0.75rem; display: flex; align-items: center; gap: 5px; }
-.nav-location-link:hover { color: var(--gold); }
-.nav-links { display: flex; gap: 25px; }
-.nav-links a { text-decoration: none; color: #fff; font-size: 0.75rem; text-transform: uppercase; font-weight: 500; letter-spacing: 1px; }
-.nav-links a:hover { color: var(--gold); transform: translateY(-2px); }
-.nav-cta { background: var(--gold); color: #000; padding: 10px 22px; text-decoration: none; font-weight: 800; border-radius: 50px; font-size: 0.8rem; text-transform: uppercase; animation: buttonGlow 3s infinite; }
-
-/* Hero Section */
-.hero-split { display: flex; min-height: 100vh; padding-top: 60px; }
-.hero-text-side { flex: 1; padding: 40px 80px 0; display: flex; flex-direction: column; justify-content: center; animation: fadeInUp 1s ease-out; }
-.logo-brand-container-large { max-width: 400px; margin-bottom: 25px; }
-.logo-real-img { width: 100%; height: auto; mix-blend-mode: screen; filter: contrast(1.6) brightness(1.1); transform: rotate(-1.8deg); }
 .neon-effect { animation: neonFlicker 6s infinite; }
 
 .hero-title-main { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1; font-weight: 900; }

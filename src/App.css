@@ -151,7 +151,7 @@ body { background-color: var(--dark); color: var(--white); font-family: 'Inter',
   /* Nav Mobile */
   .nav-content { flex-direction: column; gap: 10px; }
   .nav-left { width: 100%; justify-content: center; }
-  .nav-links { width: 100%; overflow-x: auto; padding: 10px; justify-content: flex-start; scrollbar-width: none; }
+  .nav-links { width: 100%; overflow-x: auto; padding: 10px 30px 10px 15px; justify-content: flex-start; scrollbar-width: none; }
   .nav-links::-webkit-scrollbar { display: none; }
   .nav-links a { white-space: nowrap; }
   .nav-cta, .nav-maps-info { display: none; }

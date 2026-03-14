@@ -111,7 +111,10 @@ body {
 .overlay-gradient-v2 { 
   position: absolute; 
   inset: 0; 
-  background: linear-gradient(to right, var(--dark), transparent 30%); 
+  /* Difuminado a la izquierda Y ahora también suave abajo */
+  background: linear-gradient(to right, var(--dark) 0%, var(--dark) 5%, transparent 35%),
+              linear-gradient(to top, var(--dark) 0%, transparent 20%);
+  pointer-events: none;
 }
 
 /* Services */

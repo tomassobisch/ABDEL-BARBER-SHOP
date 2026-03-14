@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, Instagram, MessageCircle, Star, CheckCircle2, Quote, Award, Sparkles, Zap, Check, ChevronRight, ChevronLeft } from 'lucide-react';
+import { MapPin, Phone, Instagram, MessageCircle, Star, Quote, Check, ChevronRight, ChevronLeft } from 'lucide-react';
 import './App.css';
 import heroMain from './assets/hero-main.webp';
 import gallery1 from './assets/gallery-1.webp';

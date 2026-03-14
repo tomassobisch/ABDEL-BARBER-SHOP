@@ -453,13 +453,114 @@ body {
   color: var(--gray-text);
 }
 
-/* Mobile */
+/* Mobile Adjustments */
 @media (max-width: 968px) {
-  .hero-split { flex-direction: column; }
-  .hero-text-side { padding: 60px 30px; order: 2; }
-  .hero-image-side-v2 { height: auto; order: 1; }
-  .main-title { font-size: 3rem; }
-  .hero-title-main { font-size: 2.2rem; }
-  .hero-actions-large { flex-direction: column; }
-  .review-circle-card { width: 250px; height: 250px; }
+  .hero-split {
+    flex-direction: column;
+    height: auto;
+    padding-top: 100px;
+  }
+
+  .hero-text-side {
+    padding: 40px 20px;
+    order: 2; /* Texto abajo */
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-image-side-v2 {
+    width: 100%;
+    height: 45vh; /* Foto a mitad de pantalla en móvil */
+    order: 1; /* Foto arriba */
+    flex: none;
+  }
+
+  .hero-full-photo {
+    object-fit: cover; /* En móvil queda mejor cover para la foto de arriba */
+    height: 100%;
+  }
+
+  .overlay-gradient-v2 {
+    background: linear-gradient(to top, #0a0a0a 0%, transparent 30%);
+  }
+
+  .logo-brand-container-large {
+    max-width: 280px;
+    margin: 0 auto 20px;
+  }
+
+  .hero-title-main {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .hero-desc-large {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .hero-services-list {
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .hero-actions-large {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .btn-primary-pill-large, .btn-secondary-outline {
+    width: 100%;
+    text-align: center;
+    padding: 15px 20px;
+  }
+
+  .hero-features-mini {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .mini-feature {
+    align-items: center;
+  }
+
+  /* Navigation Mobile */
+  .nav-links {
+    display: none; /* Ocultar links en móvil para simplificar */
+  }
+
+  .nav-left {
+    gap: 15px;
+  }
+
+  .nav-maps-info {
+    display: none;
+  }
+
+  /* Services Mobile */
+  .services-menu-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .menu-item-round {
+    padding: 15px 20px;
+    border-radius: 30px;
+  }
+
+  /* Reviews Mobile */
+  .review-circle-card {
+    width: 280px;
+    height: 280px;
+    padding: 30px;
+  }
+
+  /* Contact Mobile */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
